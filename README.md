@@ -11,6 +11,7 @@ protected:
     int age;
 
 public:
+
     void getPerson() {
         cout << "Enter Name: ";
         cin >> ws; // clear input buffer
@@ -21,8 +22,7 @@ public:
     void displayPerson() {
         cout << "Name: " << name << endl;
         cout << "Age: " << age << endl;
-    }
-};
+    }};
 
 class Student : public Person {
 protected:
@@ -30,6 +30,7 @@ protected:
     string course;
 
 public:
+
     void getStudent() {
         getPerson();
         cout << "Enter Roll Number: ";
@@ -44,12 +45,13 @@ public:
         cout << "Course: " << course << endl;
     }
 };
-// Derived Class 2 (Multilevel Inheritance: Person -> Student -> GraduateStudent)
+
 class GraduateStudent : public Student {
 private:
     string researchTopic;
 
 public:
+
     void getGraduate() {
         getStudent(); // Calls Student input which calls Person input
         cout << "Enter Research Topic: ";
@@ -59,10 +61,10 @@ public:
     void displayGraduate() {
         displayStudent(); // Calls Student display which calls Person display
         cout << "Research Topic: " << researchTopic << endl;
-    }
-};
+    }};
 
 int main() {
+
     int choice;
     cout << "=== University Management System ===" << endl;
     cout << "1. Regular Student (Single Inheritance Demo)" << endl;
